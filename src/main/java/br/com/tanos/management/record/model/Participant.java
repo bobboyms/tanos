@@ -7,14 +7,14 @@ import java.util.List;
 @Data
 @Entity
 @Table(name = "tb_person")
-public class Person {
+public class Participant {
 
-    public enum PersonType {
+    public enum ParticipantType {
         FISICO,
         JURIDICO
     }
 
-    public enum PersonCategory {
+    public enum ParticipantCategory {
         CUSTOMER, //CLIENTE
         SUPPLIER, //FORNECEDOR
         SHIPPING_COMPANY, //TRANSPORTADORA
@@ -24,10 +24,18 @@ public class Person {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String name;
-    private PersonType personType;
 
+    @Column(nullable = false)
+    private String name;
+
+    @Column(nullable = false)
+    private String cpf;
+
+    @Column(nullable = false)
+    private ParticipantType participantType;
+
+    @Column(nullable = false)
     @ElementCollection(fetch = FetchType.EAGER)
-    private List<PersonCategory> personCategory;
+    private List<ParticipantCategory> participantCategory;
 
 }

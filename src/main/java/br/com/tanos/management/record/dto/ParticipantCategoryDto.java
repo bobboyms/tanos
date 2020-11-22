@@ -1,16 +1,16 @@
 package br.com.tanos.management.record.dto;
 
-import br.com.tanos.management.record.model.Person;
+import br.com.tanos.management.record.model.Participant;
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
-@Getter
-@Setter
+@Data
 @AllArgsConstructor
-public class PersonTypeDto {
+public class ParticipantCategoryDto {
 
     private String label;
-    private Person.PersonType value;
+    private Participant.ParticipantCategory value;
 
 }
